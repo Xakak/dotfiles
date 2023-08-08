@@ -1,0 +1,30 @@
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](http://keepachangelog.com/)
+and this project adheres to [Semantic Versioning](http://semver.org/).
+
+## [Unreleased] - ReleaseDate
+- Fix high CPU usage when input isn't empty [#66](https://github.com/svenstaro/rofi-calc/pull/66) (thanks @bootstrap-prime)
+- Add `-automatic-save-to-history` option [#87](https://github.com/svenstaro/rofi-calc/pull/87) (thanks @matejdro)
+
+## [2.1.0] - 2022-02-06
+- Correctly handle ≈ signs emitted by qalc [#78](https://github.com/svenstaro/rofi-calc/pull/78) (thanks @SabrinaJewson)
+- Add `-calc-command-history` to add result to history when using `-calc-command` [#79](https://github.com/svenstaro/rofi-calc/pull/79) (thanks @SabrinaJewson)
+- Correctly handle multiple equals signs emitted by qalc [#80](https://github.com/svenstaro/rofi-calc/pull/78) (thanks @SabrinaJewson)
+
+## [2.0.0] - 2020-11-14
+- Add option to completely disable history [#63](https://github.com/svenstaro/rofi-calc/pull/63) (thanks @UnkwUsr)
+
+## [1.9] - 2020-09-24
+- Add options to specify output hints [#59](https://github.com/svenstaro/rofi-calc/pull/59) (thanks @sa5gap)
+
+## [1.8] - 2020-08-13
+- Enable qalc's Unicode mode by default
+- Add `-no-unicode` option to disable aforementioned unicode support
+
+<!-- next-url -->
+[Unreleased]: https://github.com/svenstaro/rofi-calc/compare/v2.0.0...HEAD
+[2.0.0]: https://github.com/svenstaro/rofi-calc/compare/v1.9...v2.0.0
+[1.9]: https://github.com/svenstaro/rofi-calc/compare/v1.8...v1.9

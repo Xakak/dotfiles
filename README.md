@@ -1,4 +1,4 @@
-<h1 align="center">My Linux Setup DWM</h1>
+<h1 align="center">My Linux Setup with DWM</h1>
 
 
 ![App Screenshot](screenshot.png)

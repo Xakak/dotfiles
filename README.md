@@ -1,6 +1,7 @@
 <h1 align="center">My Linux Setup with DWM</h1>
 
 
+Clean and minimal dwm desktop
 ![App Screenshot](screenshot.png)
 
 

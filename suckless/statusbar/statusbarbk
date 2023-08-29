@@ -1,0 +1,26 @@
+#!bin/sh
+
+dayanddate () {
+	LC_TIME="en_US.UTF-8" date '+%G. %B. %e, %A'
+}
+
+vol () {
+	bash /home/rayan/statusbar/volume.sh
+}
+
+battery () {
+	bash /home/rayan/statusbar/battery.sh
+}
+
+wifi () {
+	bash /home/rayan/statusbar/wifi.sh
+}
+
+timedate () {
+	date '+%I:%M%p'
+}
+
+while :; do
+	xsetroot -name "$(dayanddate)"";"" $(vol)""  $(battery)""    $(wifi)"" $(timedate)"
+    sleep 1
+done

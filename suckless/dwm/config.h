@@ -10,25 +10,35 @@ static const char *light_down[] = { "/usr/bin/light",   "-U", "5", NULL };
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */ 
 static const unsigned int snap      = 32;       /* snap pixel */
-static const unsigned int gappih    = 20;       /* horiz inner gap between windows */
-static const unsigned int gappiv    = 17;       /* vert inner gap between windows */
-static const unsigned int gappoh    = 20;       /* horiz outer gap between windows and screen edge */
-static const unsigned int gappov    = 30;       /* vert outer gap between windows and screen edge */
+static const unsigned int gappih    = 12;       /* horiz inner gap between windows */
+static const unsigned int gappiv    = 10;       /* vert inner gap between windows */
+static const unsigned int gappoh    = 10;       /* horiz outer gap between windows and screen edge */
+static const unsigned int gappov    = 10;       /* vert outer gap between windows and screen edge */
 static       int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Fira Code Nerd Font Mono:size=15" };
-static const char dmenufont[]       = "Fira Code Nerd Font Mono:size=15";
-static const char col_gray1[]       = "#333232";
-static const char col_gray2[]       = "#444444";
-static const char col_gray3[]       = "#eeeeee";
-static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#474747";
+static const int splitstatus        = 1;        /* 1 for split status items */
+static const char *splitdelim        = ";";
+static const char *fonts[]          = { "Hack Nerd Font:size=12" };
+static const char dmenufont[]       = "Hack Nerd Font:size=12";
+static const char col_gray1[]       = "#020914";
+static const char col_gray2[]       = "#a8856c";
+static const char col_gray3[]       = "#f1be9b";
+static const char col_gray4[]       = "#f1be9b";
+static const char col_cyan[]        = "#63576E";
+static const unsigned int baralpha = 0xd0;
+static const unsigned int borderalpha = OPAQUE;
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
 	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
 };
+static const unsigned int alphas[][3]      = {
+    /*               fg      bg        border*/
+    [SchemeNorm] = { OPAQUE, baralpha, borderalpha },
+	[SchemeSel]  = { OPAQUE, baralpha, borderalpha },
+};
+
 
 /* tagging */
 
@@ -94,8 +104,9 @@ static const char *termcmd[]  = { "st", NULL };
 #include "shiftview.c"
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_m,      spawn,          {.v = dmenucmd } },
-	{ MODKEY|ShiftMask,             XK_Return, spawn,          SHCMD("alacritty") },
+	{ MODKEY|Mod4Mask,              XK_l,      spawn,          {.v = dmenucmd } },
+	{ MODKEY,                       XK_m,      spawn,          SHCMD("alacritty") },
+	{ MODKEY|ShiftMask,		XK_Return, spawn,	   {.v = termcmd  } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
@@ -108,7 +119,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_h,      setcfact,       {.f = +0.25} },
 	{ MODKEY|ShiftMask,             XK_l,      setcfact,       {.f = -0.25} },
 	{ MODKEY|ShiftMask,             XK_o,      setcfact,       {.f =  0.00} },
-	{ MODKEY,                       XK_Return, zoom,           {0} },
+	{ MODKEY,                       XK_Return, zoom,           {.i = +1} },
 	{ MODKEY|Mod4Mask,              XK_u,      incrgaps,       {.i = +1 } },
 	{ MODKEY|Mod4Mask|ShiftMask,    XK_u,      incrgaps,       {.i = -1 } },
 	{ MODKEY|Mod4Mask,              XK_i,      incrigaps,      {.i = +1 } },

@@ -1,85 +1,10 @@
 configuration {
   display-drun: "Applications:";
   display-window: "Windows:";
-  drun-display-format: "{name}";
-  font: "Fira Code Nerd Font Mono  Regular 12";
-  modi: "window,run,drun,calc";
+  drun-display-format: "{icon} {name}";
+  font: "Cascadia Code 10";
+  modi: "window,run,drun";
   show-icons: true;
-  icon-theme: "Cupertino-Ventura";
 }
 
-@theme "/dev/null"
-
-* {
-  bg: #11121D00;
-  bg-alt: #444b6a;
-  bg-selected: #31324466;
-
-  fg: #FFFFFF;
-  fg-alt: #787c99;
-
-  
-  border: 0;
-  margin: 0;
-  padding: 0;
-  spacing: 0;
-}
-
-window {
-  width: 30%;
-  background-color: @bg;
-}
-
-element {
-  padding: 8 12;
-  background-color: transparent;
-  text-color: @fg-alt;
-}
-
-element selected {
-  text-color: @fg;
-  background-color: @bg-selected;
-}
-
-element-text {
-  background-color: transparent;
-  text-color: inherit;
-  vertical-align: 0.5;
-}
-
-element-icon {
-  size: 14;
-  padding: 0 10 0 0;
-  background-color: transparent;
-}
-
-entry {
-  padding: 12;
-  background-color: @bg-alt;
-  text-color: @fg;
-}
-
-inputbar {
-  children: [prompt, entry];
-  background-color: @bg;
-}
-
-listview {
-  background-color: @bg;
-  columns: 1;
-  lines: 10;
-}
-
-mainbox {
-  children: [inputbar, listview];
-  background-color: @bg;
-}
-
-prompt {
-  enabled: true;
-  padding: 12 0 0 12;
-  background-color: @bg-alt;
-  text-color: @fg;
-}
-
-
+@theme "catppuccin-mocha"

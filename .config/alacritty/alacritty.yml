@@ -15,24 +15,24 @@ window.opacity : 3
 
 font:
   normal:
-    family: Hack Nerd Font
+    family: Hack Nerd Font 
     style:  Regular
   bold:
-    family: Hack Nerd Font
-    style:  Regular
+    family: Hack Nerd Font 
+    style:  Bold
   italic:
     family: Hack Nerd Font
     style:  Italic
   bold_italic:
-    family: Hack Nerd Font 
-    style:  Italic
-  size: 11
+    family: Hack Nerd Font
+    style:  Bold Italic
+  size: 9
 draw_bold_text_with_bright_colors: true
 
 colors:
   primary:
-    background: "#11121D"
-    foreground: "#a9b1d6"
+    background: "#2e3440"
+    foreground: "#ebdbb2"
   normal:
     black: "#32344a"
     red: "#f7768e"

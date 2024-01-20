@@ -20,7 +20,11 @@ timedate () {
 	date '+%I:%M%p'
 }
 
-while	xsetroot -name "$(dayanddate)"";"" $(vol)""  $(battery)""    $(wifi)"" $(timedate)"
+riyal () {
+	cd currencyConvertor/; ./currencyConvertor sar pkr
+}
+
+while	xsetroot -name "$(riyal)"" $(dayanddate)"";""    $(battery)""    $(wifi)"" $(timedate)"
 do
     sleep 1
 done

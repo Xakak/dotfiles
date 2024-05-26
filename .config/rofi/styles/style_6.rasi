@@ -2,23 +2,23 @@
 configuration {
     modi:                        "drun,filebrowser,window,run";
     show-icons:                  true;
-    display-drun:                "";
-    display-run:                 "";
-    display-filebrowser:         "";
-    display-window:              "";
+    display-drun:                " ";
+    display-run:                 " ";
+    display-filebrowser:         " ";
+    display-window:              " ";
     drun-display-format:         "{name}";
     window-format:               "{w}{t}";
     font:                        "JetBrainsMono Nerd Font 10";
     icon-theme:                  "Tela-circle-dracula";
 }
 
-@theme "~/.config/rofi/themes/Gruvbox-Retro.rasi"
+@theme "~/.config/rofi/theme.rasi"
 
 
 // Main //
 window {
-    height:                      33em;
-    width:                       63em;
+    height:                      31em;
+    width:                       37em;
     transparency:                "real";
     fullscreen:                  false;
     enabled:                     true;
@@ -33,69 +33,58 @@ mainbox {
     spacing:                     0em;
     padding:                     0em;
     orientation:                 horizontal;
-    children:                    [ "dummywall" , "listbox" ];
-    background-color:            transparent;
-}
-dummywall {
-    spacing:                     0em;
-    padding:                     0em;
-    width:                       40em;
-    expand:                      false;
-    orientation:                 horizontal;
-    children:                    [ "mode-switcher" , "inputbar" ];
-    background-color:            transparent;
-    background-image:            url("/home/rayan/Pictures/wallpapers/wallpaper/dwm-wallpaper/mask.jpg", height);
-}
-
-
-// Modes //
-mode-switcher{
-    orientation:                 vertical;
-    enabled:                     true;
-    width:                       3.8em;
-    padding:                     9.2em 0.5em 9.2em 0.5em;
-    spacing:                     1.2em;
-    background-color:            transparent;
-    background-image:            url("~/.config/swww/Gruvbox-Retro/minimal_squares.png", height);
-}
-button {
-    cursor:                      pointer;
-    vertical-align:              0.50;
-    horizontal-align:            0.45;
-    border-radius:               2em;
+    children:                    [ "inputbar" , "mode-switcher" , "listbox" ];
     background-color:            @main-bg;
-    text-color:                  @main-fg;
-}
-button selected {
-    background-color:            @main-fg;
-    text-color:                  @main-bg;
 }
 
 
 // Inputs //
 inputbar {
+    width:                       0em;
     enabled:                     true;
     children:                    [ "entry" ];
-    background-color:            transparent;
 }
 entry {
     enabled:                     false;
 }
 
 
+// Modes //
+mode-switcher {
+    width:                       9em;
+    orientation:                 vertical;
+    enabled:                     true;
+    padding:                     3em 1.8em 3em 1.8em;
+    spacing:                     1em;
+    background-color:            @main-bg;
+}
+button {
+    cursor:                      pointer;
+    border-radius:               3em;
+    background-color:            @main-bg;
+    text-color:                  @main-fg;
+}
+button selected {
+    border-radius:               3em;
+    background-color:            @main-fg;
+    text-color:                  @main-bg;
+}
+
+
 // Lists //
 listbox {
+    padding:                     0em;
     spacing:                     0em;
-    padding:                     2em;
+    orientation:                 vertical;
     children:                    [ "dummy" , "listview" , "dummy" ];
     background-color:            transparent;
 }
 listview {
-    enabled:                     true;
+    padding:                     1em;
     spacing:                     0em;
-    padding:                     0em;
+    enabled:                     true;
     columns:                     1;
-    lines:                       8;
+    lines:                       7;
     cycle:                       true;
     dynamic:                     true;
     scrollbar:                   false;
@@ -115,26 +104,32 @@ dummy {
 
 // Elements //
 element {
+    orientation:                 horizontal;
     enabled:                     true;
-    spacing:                     1em;
-    padding:                     0.4em;
+    spacing:                     1.5em;
+    padding:                     0.5em;
     cursor:                      pointer;
     background-color:            transparent;
     text-color:                  @main-fg;
+}
+@media(max-aspect-ratio: 1.8) {
+    element {
+        orientation:             vertical;
+    }
 }
 element selected.normal {
     background-color:            @select-bg;
     text-color:                  @select-fg;
 }
 element-icon {
-    size:                        2.8em;
+    size:                        3em;
     cursor:                      inherit;
     background-color:            transparent;
     text-color:                  inherit;
 }
 element-text {
     vertical-align:              0.5;
-    horizontal-align:            0.0;
+    horizontal-align:            0;
     cursor:                      inherit;
     background-color:            transparent;
     text-color:                  inherit;

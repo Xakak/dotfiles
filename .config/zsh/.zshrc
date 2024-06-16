@@ -3,7 +3,12 @@
 # Enable colors and change prompt:
 autoload -U colors && colors
 PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
-
+alias p="sudo pacman"
+alias cp="cp -i"
+alias rm-rf="rm -rfi"
+alias mv="mv -i"
+alias c="clear"
+alias ls="ls --color"
 ENABLE_CORRECTION="true"
 
 # History in cache directory:
@@ -74,4 +79,10 @@ bindkey '^e' edit-command-line
 
 
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
-source /home/rayan/.oh-my-zsh/oh-my-zsh.sh
+source /plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+export PATH=$PATH:/home/rayan/.spicetify
+
+export PATH=$PATH:/home/rayan/.spicetify
+#source /usr/share/nvm/init-nvm.sh

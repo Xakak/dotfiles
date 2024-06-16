@@ -1,0 +1,80 @@
+
+colors.draw_bold_text_with_bright_colors = true
+live_config_reload = true
+
+import = [
+    "~/.config/alacritty/themes/themes/ayu_dark.toml"
+]
+
+
+
+
+[window]
+opacity = 0.5
+blur = true
+
+[window.padding]
+x = 3
+y = 3
+
+
+
+
+[window.class]
+instance = "Alacritty"
+general = "Alacritty"
+
+
+[scrolling]
+history = 10_000
+multiplier = 5
+
+[font]
+size = 14
+
+  [font.normal]
+  family = "Inconsolata Nerd Font"
+  style = "Regular"
+
+  [font.bold]
+  family = "Inconsolata Nerd Font"
+  style = "Bold"
+
+  [font.italic]
+  family = "Inconsolata Nerd Font"
+  style = "Italic"
+
+  [font.bold_italic]
+  family = "Inconsolata Nerd Font"
+  style = "Bold Italic"
+
+[colors.primary]
+background = "#10131c"
+foreground = "#bbc2cf"
+
+[colors.normal]
+black = "#32344a"
+red = "#f7768e"
+green = "#9ece6a"
+yellow = "#e0af68"
+blue = "#7aa2f7"
+magenta = "#ad8ee6"
+cyan = "#449dab"
+white = "#787c99"
+
+[colors.bright]
+black = "#444b6a"
+red = "#ff7a93"
+green = "#b9f27c"
+yellow = "#ff9e64"
+blue = "#7da6ff"
+magenta = "#bb9af7"
+cyan = "#0db9d7"
+white = "#acb0d0"
+
+[selection]
+save_to_clipboard = false
+
+[shell]
+program = "/usr/bin/zsh"
+

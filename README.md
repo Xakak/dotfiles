@@ -1,7 +1,7 @@
-<h1 align="center">My Linux Setup with DWM</h1>
+<h1 align="center">Hypr + Arch = ❤️</h1>
 
 
-Clean and minimal dwm desktop!
+Clean and hyprland desktop!
 
 ![App Screenshot](screenshot.png)
 
